@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do you love me♡?</title>
+    <style>
+        /* CSS部分 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* 防止滾動條出現 */
+        }
+
+        body {
+            background: linear-gradient(45deg, rgba(77, 124, 185, 0.728), rgba(255, 192, 203));
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 1cm; /* 加入頂部間距 */
+            margin-bottom: 0.5cm; /* 加入底部間距 */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5cm; /* 調整按鈕之間的間距 */
+            margin-bottom: 0.5cm; /* 調整按鈕容器與標題之間的間距 */
+        }
+
+        input[type="button"] {
+            background-color: rgb(0, 89, 225);
+            border: none;
+            width: 80px;
+            border-radius: 10px;
+            font-size: 20px;
+            padding: 6px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        #yes-button {
+            background-color: rgb(0, 89, 225);
+        }
+
+        #no-button {
+            background-color: rgb(225, 0, 0);
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <!-- 標題 -->
+    <h1>Do You Love Me ?</h1>
+    <!-- 按鈕容器 -->
+    <div class="button-container">
+        <!-- "YES" 按鈕 -->
+        <input id="yes-button" type="button" value="YES" onclick="clickYesButton()">
+        <!-- "NO" 按鈕 -->
+        <input id="no-button" type="button" value="NO" onmouseover="hoverNoButton()">
+    </div>
+    <!-- JavaScript 部分 -->
+    <script>
+        // 定義 "YES" 按鈕點擊事件
+        function clickYesButton() {
+            alert("I love you too bae😉🥰😘");
+        }
+
+        // 獲取 "NO" 按鈕
+        let noButton = document.getElementById("no-button");
+
+        // 定義函數以移動 "NO" 按鈕到隨機位置
+        function moveNoButton() {
+            const maxWidth = 400;
+            const maxHeight = 400;
+            const newX = Math.floor(Math.random() * maxWidth);
+            const newY = Math.floor(Math.random() * maxHeight);
+            noButton.style.left = newX + "px";
+            noButton.style.top = newY + "px";
+        }
+
+        // 當鼠標懸停在 "NO" 按鈕上時，移動 "NO" 按鈕
+        noButton.addEventListener("mouseover", moveNoButton);
+    </script>
+</body>
+</html>
